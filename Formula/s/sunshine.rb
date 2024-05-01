@@ -3,11 +3,11 @@ require "language/node"
 class Sunshine < Formula
   desc "Self-hosted game stream host for Moonlight"
   homepage "https://app.lizardbyte.dev/Sunshine"
-  url "https://github.com/LizardByte/Sunshine.git",
+  url "https://github.com/BayLee4/Sunshine.git",
     tag: "master"
   version "0.23.1"
   license all_of: ["GPL-3.0-only"]
-  head "https://github.com/LizardByte/Sunshine.git", branch: "nightly"
+  head "https://github.com/BayLee4/Sunshine.git", branch: "nightly"
 
   depends_on "boost" => :build
   depends_on "cmake" => :build
@@ -19,9 +19,9 @@ class Sunshine < Formula
   depends_on "opus"
 
   def install
-    ENV["BRANCH"] = "master"
+    ENV["BRANCH"] = "nightly"
     ENV["BUILD_VERSION"] = "v0.23.1"
-    ENV["COMMIT"] = "8b21db64fb8e8ffb9c24a412dbc66b7410699211"
+    ENV["COMMIT"] = "4d89d734b70e7e2963aa75ee4a094313c0686712"
 
     args = %W[
       -DBUILD_WERROR=ON
